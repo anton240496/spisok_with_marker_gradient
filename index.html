@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Список с градиентными маркерами</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            color: #333;
+        }
+        
+        .container {
+            max-width: 800px;
+            width: 100%;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+        }
+        
+        h1 {
+            text-align: center;
+            margin-bottom: 30px;
+            color: #2c3e50;
+            font-weight: 600;
+        }
+        
+        .gradient-list {
+            list-style: none;
+            counter-reset: gradient-counter;
+        }
+        
+        .gradient-list li {
+            counter-increment: gradient-counter;
+            padding: 15px 15px 15px 60px;
+            margin-bottom: 15px;
+            background: #f8f9fa;
+            border-radius: 10px;
+            position: relative;
+            font-size: 18px;
+            line-height: 1.5;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .gradient-list li:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .gradient-list li::before {
+            content: counter(gradient-counter);
+            position: absolute;
+            left: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: bold;
+            color: white;
+            background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+            box-shadow: 0 3px 10px rgba(37, 117, 252, 0.3);
+        }
+        
+        /* Альтернативные цвета для маркеров */
+        .gradient-list li:nth-child(2n)::before {
+            background: linear-gradient(135deg, #FF512F 0%, #DD2476 100%);
+            box-shadow: 0 3px 10px rgba(221, 36, 118, 0.3);
+        }
+        
+        .gradient-list li:nth-child(3n)::before {
+            background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
+            box-shadow: 0 3px 10px rgba(17, 153, 142, 0.3);
+        }
+        
+        .gradient-list li:nth-child(4n)::before {
+            background: linear-gradient(135deg, #FF9966 0%, #FF5E62 100%);
+            box-shadow: 0 3px 10px rgba(255, 94, 98, 0.3);
+        }
+        
+        .description {
+            margin-top: 30px;
+            text-align: center;
+            color: #6c757d;
+            font-size: 16px;
+            max-width: 600px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Список с градиентными маркерами</h1>
+        
+        <ol class="gradient-list">
+            <li>Создать HTML-структуру для списка</li>
+            <li>Сбросить стандартные стили списка</li>
+            <li>Использовать псевдоэлементы для маркеров</li>
+            <li>Применить градиентный фон к псевдоэлементам</li>
+            <li>Добавить тени для эффекта глубины</li>
+            <li>Реализовать различные градиенты для элементов</li>
+            <li>Добавить hover-эффекты для interactivity</li>
+            <li>Адаптировать под разные устройства</li>
+        </ol>
+    </div>
+    
+    <p class="description">
+        Этот список использует CSS-градиенты для создания красивых маркеров. 
+        Каждый маркер имеет уникальный градиент и тень для создания эффекта глубины.
+    </p>
+</body>
+</html>
